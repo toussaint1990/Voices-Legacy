@@ -1,254 +1,191 @@
-/* ========== GLOBAL RESET ========== */
-* {
+/* ===== Base / Reset ===== */
+*,
+*::before,
+*::after {
   box-sizing: border-box;
-  margin: 0;
-  padding: 0;
 }
-
 :root {
-  color-scheme: dark;
-  font-family: "Inter", system-ui, sans-serif;
-  background-color: #0b0b0b;
-  color: #fff;
-  --accent: #ffd700;
+  --bg: #111722;
+  --panel: #1b2431;
+  --text: #e9eef6;
+  --muted: #9fb3c8;
+  --accent: #ffd04d;
 }
-
-/* ========== BODY / TEXT ========== */
+html, body, #root {
+  height: 100%;
+}
+html { scroll-behavior: smooth; }
 body {
   margin: 0;
-  line-height: 1.6;
-  background-color: #0b0b0b;
-  color: #f0f0f0;
-  font-size: 1rem;
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  background: radial-gradient(1200px 1200px at 10% -20%, #2a3546 0%, #0d1117 60%) fixed,
+              var(--bg);
+  color: var(--text);
 }
-
 h1, h2, h3 {
-  font-weight: 700;
-  margin-bottom: 0.5rem;
-  color: var(--accent);
-  text-align: center;
+  margin: 0 0 10px;
+  line-height: 1.2;
 }
+section { padding: 48px 16px; }
+.stack > * + * { margin-top: 16px; }
 
-/* ========== NAVBAR ========== */
-.navbar {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  background-color: #111;
-  color: var(--accent);
-  padding: 0.75rem 1.25rem;
-  position: sticky;
-  top: 0;
-  z-index: 100;
-}
-
-.navbar .brand {
-  font-size: 1.1rem;
-  font-weight: bold;
+/* ===== Buttons (shared) ===== */
+.btn {
+  display: inline-block;
+  padding: 10px 16px;
+  border-radius: 999px;
   text-decoration: none;
-  color: var(--accent);
-}
-
-.navbar a {
   color: #fff;
-  text-decoration: none;
-  margin-left: 1rem;
+  font-weight: 600;
+  box-shadow: 0 8px 24px rgba(0,0,0,.24), inset 0 0 0 1px rgba(255,255,255,.08);
+  transition: transform .15s ease, filter .15s ease, box-shadow .15s ease;
+  will-change: transform, filter;
+  user-select: none;
+  -webkit-tap-highlight-color: transparent;
 }
-
-.navbar a:hover {
-  color: var(--accent);
+.btn:hover { transform: translateY(-1px); filter: brightness(1.06); }
+.btn:active { transform: translateY(0); filter: brightness(.96); }
+.btn.gofundme { background: #16a34a; }
+.btn.instagram {
+  background: linear-gradient(90deg, #fd1d1d 0%, #e1306c 50%, #833ab4 100%);
 }
+.btn.facebook { background: #1877f2; }
 
-/* ========== HERO SECTION ========== */
+/* ===== Hero ===== */
 .hero {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 24px 16px 32px;
   position: relative;
-  width: 100%;
-  height: 100vh;
-  overflow: hidden;
 }
 
 .hero-img {
   width: 100%;
-  height: 100%;
-  object-fit: contain;
+  height: clamp(420px, 80vh, 900px); /* desktop/tablet gets a tall, dramatic hero */
+  object-fit: cover;                 /* fills the area on larger screens */
+  object-position: center;
   display: block;
-  filter: brightness(1.05) contrast(1.1) saturate(1.05);
+  border-radius: 12px;
+  filter: brightness(1.05) contrast(1.08) saturate(1.05);
+  box-shadow:
+    0 20px 60px rgba(0,0,0,.45),
+    inset 0 0 0 1px rgba(255,255,255,.06);
 }
 
+/* Floating buttons on desktop */
 .hero-buttons {
   position: absolute;
-  bottom: 8%;
   left: 50%;
+  bottom: 16px;
   transform: translateX(-50%);
   display: flex;
+  gap: 12px;
   flex-wrap: wrap;
-  gap: 1rem;
   justify-content: center;
+  width: calc(100% - 32px);
 }
 
-/* ========== SOCIAL MEDIA BUTTONS ========== */
-.btn {
-  padding: 0.6rem 1.4rem;
-  border: none;
-  border-radius: 9999px;
-  font-weight: 600;
-  color: #fff;
-  cursor: pointer;
-  text-decoration: none;
-  text-align: center;
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
-}
-
-.btn:hover {
-  transform: scale(1.05);
-  box-shadow: 0 0 12px rgba(255, 255, 255, 0.3);
-}
-
-.btn.gofundme {
-  background: #16a34a; /* green */
-}
-
-.btn.instagram {
-  background: linear-gradient(45deg, #f58529, #dd2a7b, #8134af);
-}
-
-.btn.facebook {
-  background: #1877f2;
-}
-
-/* ========== ABOUT SECTION ========== */
-#about {
-  padding: 4rem 1rem;
-  max-width: 900px;
+/* ===== Content panels (About/Gallery/Contact) – optional polish ===== */
+.about-section,
+.gallery-section,
+.contact-section {
+  max-width: 1100px;
   margin: 0 auto;
-  text-align: left;
-}
-
-.about-letter {
-  background: rgba(255, 255, 255, 0.06);
-  border-left: 3px solid var(--accent);
+  background: linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,0));
+  border: 1px solid rgba(255,255,255,.08);
+  border-radius: 16px;
   padding: 24px;
-  margin-top: 20px;
-  line-height: 1.6;
-  font-size: 0.95rem;
-  color: #eee;
-  border-radius: 8px;
+  box-shadow: 0 12px 40px rgba(0,0,0,.35);
 }
 
-.about-letter p {
-  margin-bottom: 1rem;
-}
-
-.about-letter strong {
-  color: var(--accent);
-}
-
-/* ========== GALLERY SECTION ========== */
-#gallery {
-  padding: 4rem 1rem;
-  max-width: 1200px;
-  margin: 0 auto;
-}
-
-.gallery-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
-  gap: 18px;
-  margin-top: 2rem;
-}
-
-.gallery-card {
-  border: none;
-  background: transparent;
-  padding: 0;
-  cursor: pointer;
-  transition: transform 0.25s ease, box-shadow 0.25s ease;
-}
-
-.gallery-card img {
-  width: 100%;
-  height: 220px;
-  object-fit: cover;
-  border-radius: 10px;
-  transition: transform 0.25s ease, filter 0.25s ease;
-}
-
-.gallery-card:hover img {
-  transform: scale(1.05);
-  filter: brightness(1.1);
-}
-
-/* Lightbox effect */
-.lightbox {
-  position: fixed;
-  inset: 0;
-  background: rgba(0, 0, 0, 0.9);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  z-index: 200;
-}
-
-.lightbox img {
-  max-width: 90%;
-  max-height: 90%;
-  border-radius: 12px;
-  box-shadow: 0 0 25px rgba(255, 255, 255, 0.25);
-}
-
-/* ========== CONTACT SECTION ========== */
-#contact {
-  padding: 3rem 1rem;
-  text-align: center;
-}
-
-#contact a {
-  color: var(--accent);
-  text-decoration: none;
-}
-
-#contact a:hover {
-  text-decoration: underline;
-}
-
-/* ========== RESPONSIVE DESIGN ========== */
-@media (max-width: 900px) {
-  .hero-buttons {
-    bottom: 4%;
-    flex-direction: column;
-    gap: 0.8rem;
-  }
-
-  .gallery-grid {
-    grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
-  }
-
-  .gallery-card img {
-    height: 160px;
-  }
-}
-
-@media (max-width: 600px) {
-  h1, h2 {
-    font-size: 1.4rem;
-  }
-
-  .btn {
-    width: 80%;
-    max-width: 250px;
-    margin: 0 auto;
-  }
-
-  .gallery-grid {
-    grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
-    gap: 12px;
-  }
-
-  .gallery-card img {
-    height: 140px;
+/* ===== Mobile: show the entire flyer without cropping ===== */
+@media (max-width: 640px) {
+  .hero {
+    padding: 12px 12px 16px;
   }
 
   .hero-img {
-    object-fit: cover;
+    height: auto;          /* key change for mobile */
+    max-height: none;
+    object-fit: contain;   /* show full poster */
+  }
+
+  /* Buttons move below the image on mobile */
+  .hero-buttons {
+    position: static;
+    transform: none;
+    margin-top: 12px;
+    gap: 10px;
+    justify-content: center;
+  }
+
+  .btn {
+    padding: 10px 14px;
+    font-size: 14px;
+  }
+}
+
+/* Slightly wider phones / small tablets */
+@media (min-width: 641px) and (max-width: 900px) {
+  .hero-img { height: 70vh; }
+}
+
+/* ---- Desktop hero layout & sizing ---- */
+:root { --nav-h: 64px; } /* adjust if your navbar is taller/shorter */
+
+.hero {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  padding: 16px 12px 32px;
+}
+
+/* Base: don't crop the flyer */
+.hero-img {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+
+/* === HERO IMAGE FIX FOR DESKTOP (FULL VISIBILITY) === */
+.hero {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: calc(100vh - 80px); /* full screen minus navbar */
+  padding: 20px;
+  gap: 20px;
+}
+
+.hero-img {
+  width: auto;
+  height: auto;
+  max-width: 90vw;                 /* leave some side padding */
+  max-height: calc(100vh - 180px); /* ensures full flyer fits */
+  object-fit: contain;
+  border-radius: 8px;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.4);
+}
+
+.hero-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  justify-content: center;
+}
+
+/* Mobile stays flexible */
+@media (max-width: 900px) {
+  .hero {
+    min-height: auto;
+    padding: 10px;
+  }
+
+  .hero-img {
+    width: 100%;
+    height: auto;
+    max-height: none;
   }
 }
