@@ -1,8 +1,10 @@
+// src/MainApp.tsx
 import NavBar from "./components/NavBar";
 import About from "./sections/About";
 import Gallery from "./sections/Gallery";
 import Contact from "./sections/Contact";
-import "./App.css";
+import "./App.css"; // keep your section styles
+// (index.css is loaded in main.tsx, so we don't import it here)
 
 export default function MainApp() {
   return (
@@ -11,8 +13,10 @@ export default function MainApp() {
 
       {/* HERO SECTION */}
       <section id="hero" className="hero">
+        {/* Place the poster at /public/hero.jpg */}
         <img src="/hero.jpg" alt="Voices of Legacy" className="hero-img" />
 
+        {/* Social buttons — sit on the image on desktop, move below on mobile */}
         <div className="hero-buttons">
           <a
             className="btn gofundme"
@@ -22,7 +26,6 @@ export default function MainApp() {
           >
             GoFundMe
           </a>
-
           <a
             className="btn instagram"
             href="https://instagram.com"
@@ -31,7 +34,6 @@ export default function MainApp() {
           >
             Instagram
           </a>
-
           <a
             className="btn facebook"
             href="https://facebook.com"
@@ -43,7 +45,7 @@ export default function MainApp() {
         </div>
       </section>
 
-      {/* CONTENT SECTIONS */}
+      {/* CONTENT */}
       <About />
       <Gallery />
       <Contact />
