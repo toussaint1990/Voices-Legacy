@@ -1,0 +1,18 @@
+{
+  "nav": { "about": "Acerca de", "gallery": "Galería", "contact": "Contacto" },
+
+  "about": {
+    "title": "Acerca de",
+    "letter": {
+      "greeting": "Estimado/a señor/a:",
+      "p1": "Mi nombre es <strong>Luis Aníbal García</strong>, Fundador y Director Técnico de Panamerican Dojo Kai USA y Venezuela. Recibí mi primer cinturón negro de la United States Karate Association en 1979 y poseo el título de 7º Dan otorgado en 2009. Me formé con el reconocido Shihan japonés Kasuhiko Morita, manteniendo un vínculo permanente con Japan Karatedo Dojokai, nuestra sede principal en Japón.",
+      "p2": "Nuestros dojos siempre han sido lugares donde prevalecen la familia, la humanidad y la disciplina, promoviendo valores sólidos y enseñando el karate-do tradicional como un método de defensa personal sin incitar a la violencia, manteniendo la humildad y alejándonos de tendencias comerciales.",
+      "p3": "Nos honra compartir que, por primera vez, dojos de Estados Unidos y Venezuela han sido invitados formalmente a participar en el <strong>51º Campeonato All-Japan Karate-do Dojokai</strong>, que se celebrará el <strong>3 de noviembre de 2025</strong> en la ciudad de Tachikawa, Tokio. Esta oportunidad única ofrece intercambio cultural, competencia internacional y crecimiento personal para nuestros atletas.",
+      "p4": "Como en muchos eventos internacionales, los costos involucrados —incluyendo viajes, alojamiento, cuotas del torneo, comidas y entrenamiento— son significativos y deben ser cubiertos por las familias y la comunidad del dojo.",
+      "p5": "Respetuosamente le invitamos a considerar el patrocinio de nuestra delegación. Cualquier apoyo será recibido con gratitud. Su patrocinio empoderará directamente a nuestra juventud para representar tanto a Estados Unidos como a Venezuela en un escenario mundial, demostrando su compromiso con el desarrollo juvenil, el intercambio cultural y el bienestar por medio del deporte. Toda contribución, sin importar el monto, marcará una diferencia significativa para nuestros atletas.",
+      "closingTitle": "Con sincero agradecimiento,",
+      "name": "Luis Aníbal García",
+      "title": "Director Técnico – Panamerican Dojo Kai USA"
+    }
+  }
+}

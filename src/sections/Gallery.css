@@ -1,0 +1,107 @@
+/* =======================
+   GALLERY SECTION STYLES
+======================= */
+
+.gallery {
+  max-width: 1300px;
+  margin: 0 auto;
+  padding: 40px 16px;
+  color: #fff;
+  text-align: center;
+}
+
+.gallery h2 {
+  margin-bottom: 24px;
+  font-size: 2rem;
+  color: #ffd166;
+  font-weight: 700;
+}
+
+/* Grid Layout */
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 20px;
+  justify-items: center;
+}
+
+/* Image Card */
+.gallery-card {
+  position: relative;
+  overflow: hidden;
+  border-radius: 12px;
+  background: #111;
+  cursor: pointer;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  width: 100%;
+  aspect-ratio: 1 / 1;
+}
+
+.gallery-card:hover {
+  transform: scale(1.04);
+  box-shadow: 0 0 20px rgba(255, 209, 102, 0.4);
+}
+
+.gallery-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.35s ease, filter 0.35s ease;
+  filter: brightness(0.95);
+  border-radius: 12px;
+}
+
+.gallery-card:hover img {
+  transform: scale(1.08);
+  filter: brightness(1.1);
+}
+
+/* Zoom Overlay */
+.gallery-overlay {
+  animation: fadeIn 0.3s ease forwards;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Responsive Adjustments */
+@media (max-width: 1024px) {
+  .gallery-grid {
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 16px;
+  }
+}
+
+@media (max-width: 768px) {
+  .gallery-grid {
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    gap: 12px;
+  }
+}
+
+@media (max-width: 480px) {
+  .gallery-grid {
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    gap: 10px;
+  }
+}
+
+/* Fade-in on scroll effect */
+.gallery-card {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.gallery-card.visible {
+  opacity: 1;
+  transform: translateY(0);
+}

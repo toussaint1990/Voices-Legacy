@@ -1,0 +1,18 @@
+{
+  "nav": { "about": "About", "gallery": "Gallery", "contact": "Contact" },
+
+  "about": {
+    "title": "About",
+    "letter": {
+      "greeting": "Dear Sir or Madam,",
+      "p1": "My name is <strong>Luis Aníbal García</strong>, Founder and Technical Director of Panamerican Dojo Kai USA and Venezuela. I received my first black belt from the United States Karate Association in 1979 and hold a 7th Dan title awarded in 2009. I trained under the esteemed Japanese Shihan Kasuhiko Morita, maintaining a lasting bond with Japan Karatedo Dojokai, our main headquarters in Japan.",
+      "p2": "Our dojos have always been places where family, humanity, and discipline prevail, promoting strong values and teaching traditional karate-do as a method of self-defense without inciting violence, upholding humility, and remaining apart from commercial trends.",
+      "p3": "We are honored to share that, for the first time, dojos from the USA and Venezuela have been formally invited to participate in the <strong>51st All-Japan Karate-do Dojokai Championship</strong>, to be held on <strong>November 3, 2025</strong>, in Tachikawa City, Tokyo. This unique opportunity offers cultural exchange, international competition, and personal growth for our athletes.",
+      "p4": "As with many international events, the costs involved—including travel, lodging, tournament fees, meals, and training—are significant and must be covered by the families and dojo community.",
+      "p5": "We respectfully invite you to consider sponsoring our delegation. Any support will be gratefully received. Your sponsorship would directly empower our youth to represent both the USA and Venezuela on a world stage, while also showcasing your commitment to youth development, cultural exchange, and wellness through sport. All contributions, regardless of amount, will make a meaningful difference for our athletes.",
+      "closingTitle": "With sincere appreciation,",
+      "name": "Luis Aníbal García",
+      "title": "Technical Director – Panamerican Dojo Kai USA"
+    }
+  }
+}

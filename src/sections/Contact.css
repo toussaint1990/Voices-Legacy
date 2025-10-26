@@ -1,0 +1,65 @@
+.contact-section {
+  background: #111;
+  color: #f5f5f5;
+  padding: 2rem;
+  border-radius: 8px;
+  margin: 2rem auto;
+  max-width: 800px;
+  text-align: center;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.35);
+}
+
+.contact-section h2 {
+  color: #ffdd57;
+  margin-bottom: 1rem;
+  letter-spacing: 0.5px;
+}
+
+.contact-card p {
+  margin: 0.4rem 0;
+  font-size: 1rem;
+}
+
+.contact-card a {
+  color: #ffd86b;
+  text-decoration: none;
+}
+
+.contact-card a:hover {
+  text-decoration: underline;
+}
+
+.contact-links {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin-top: 1.5rem;
+}
+
+/* social buttons */
+.btn {
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  border-radius: 2rem;
+  color: #fff;
+  font-weight: 600;
+  text-decoration: none;
+  transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+.btn:hover {
+  transform: scale(1.05);
+  opacity: 0.9;
+}
+
+.btn.gofundme { background-color: #28a745; }
+.btn.instagram { background-color: #e4405f; }
+.btn.facebook { background-color: #1877f2; }
+
+@media (max-width: 600px) {
+  .contact-section {
+    padding: 1.25rem;
+    margin: 1rem;
+  }
+}

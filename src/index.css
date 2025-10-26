@@ -1,0 +1,254 @@
+/* ========== GLOBAL RESET ========== */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  color-scheme: dark;
+  font-family: "Inter", system-ui, sans-serif;
+  background-color: #0b0b0b;
+  color: #fff;
+  --accent: #ffd700;
+}
+
+/* ========== BODY / TEXT ========== */
+body {
+  margin: 0;
+  line-height: 1.6;
+  background-color: #0b0b0b;
+  color: #f0f0f0;
+  font-size: 1rem;
+}
+
+h1, h2, h3 {
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+  color: var(--accent);
+  text-align: center;
+}
+
+/* ========== NAVBAR ========== */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #111;
+  color: var(--accent);
+  padding: 0.75rem 1.25rem;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.navbar .brand {
+  font-size: 1.1rem;
+  font-weight: bold;
+  text-decoration: none;
+  color: var(--accent);
+}
+
+.navbar a {
+  color: #fff;
+  text-decoration: none;
+  margin-left: 1rem;
+}
+
+.navbar a:hover {
+  color: var(--accent);
+}
+
+/* ========== HERO SECTION ========== */
+.hero {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.hero-img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+  filter: brightness(1.05) contrast(1.1) saturate(1.05);
+}
+
+.hero-buttons {
+  position: absolute;
+  bottom: 8%;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: center;
+}
+
+/* ========== SOCIAL MEDIA BUTTONS ========== */
+.btn {
+  padding: 0.6rem 1.4rem;
+  border: none;
+  border-radius: 9999px;
+  font-weight: 600;
+  color: #fff;
+  cursor: pointer;
+  text-decoration: none;
+  text-align: center;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.btn:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 12px rgba(255, 255, 255, 0.3);
+}
+
+.btn.gofundme {
+  background: #16a34a; /* green */
+}
+
+.btn.instagram {
+  background: linear-gradient(45deg, #f58529, #dd2a7b, #8134af);
+}
+
+.btn.facebook {
+  background: #1877f2;
+}
+
+/* ========== ABOUT SECTION ========== */
+#about {
+  padding: 4rem 1rem;
+  max-width: 900px;
+  margin: 0 auto;
+  text-align: left;
+}
+
+.about-letter {
+  background: rgba(255, 255, 255, 0.06);
+  border-left: 3px solid var(--accent);
+  padding: 24px;
+  margin-top: 20px;
+  line-height: 1.6;
+  font-size: 0.95rem;
+  color: #eee;
+  border-radius: 8px;
+}
+
+.about-letter p {
+  margin-bottom: 1rem;
+}
+
+.about-letter strong {
+  color: var(--accent);
+}
+
+/* ========== GALLERY SECTION ========== */
+#gallery {
+  padding: 4rem 1rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 18px;
+  margin-top: 2rem;
+}
+
+.gallery-card {
+  border: none;
+  background: transparent;
+  padding: 0;
+  cursor: pointer;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.gallery-card img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  border-radius: 10px;
+  transition: transform 0.25s ease, filter 0.25s ease;
+}
+
+.gallery-card:hover img {
+  transform: scale(1.05);
+  filter: brightness(1.1);
+}
+
+/* Lightbox effect */
+.lightbox {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.9);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 200;
+}
+
+.lightbox img {
+  max-width: 90%;
+  max-height: 90%;
+  border-radius: 12px;
+  box-shadow: 0 0 25px rgba(255, 255, 255, 0.25);
+}
+
+/* ========== CONTACT SECTION ========== */
+#contact {
+  padding: 3rem 1rem;
+  text-align: center;
+}
+
+#contact a {
+  color: var(--accent);
+  text-decoration: none;
+}
+
+#contact a:hover {
+  text-decoration: underline;
+}
+
+/* ========== RESPONSIVE DESIGN ========== */
+@media (max-width: 900px) {
+  .hero-buttons {
+    bottom: 4%;
+    flex-direction: column;
+    gap: 0.8rem;
+  }
+
+  .gallery-grid {
+    grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+  }
+
+  .gallery-card img {
+    height: 160px;
+  }
+}
+
+@media (max-width: 600px) {
+  h1, h2 {
+    font-size: 1.4rem;
+  }
+
+  .btn {
+    width: 80%;
+    max-width: 250px;
+    margin: 0 auto;
+  }
+
+  .gallery-grid {
+    grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+    gap: 12px;
+  }
+
+  .gallery-card img {
+    height: 140px;
+  }
+
+  .hero-img {
+    object-fit: cover;
+  }
+}
