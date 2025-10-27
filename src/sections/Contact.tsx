@@ -1,44 +1,38 @@
-import { useTranslation } from "react-i18next";
-import "./Contact.css";
+import React from "react";
+import "../sections/Contact.css";
 
 export default function Contact() {
-  const { t } = useTranslation();
-
   return (
-    <section id="contact" className="contact-section">
-      <h2>{t("Contact")}</h2>
+    <section className="contact-section" id="contact">
+      <h2>Contact</h2>
+      <div className="contact-container">
+        <div className="contact-info">
+          <p>
+            <strong>Phone:</strong>{" "}
+            <a href="tel:+17869739242">(786) 973-9242</a>
+          </p>
+          <p>
+            <strong>Email:</strong>{" "}
+            <a href="mailto:kenshinjuku21@gmail.com">
+              kenshinjuku21@gmail.com
+            </a>
+          </p>
+          <p>
+            <strong>Address:</strong> 17122 W Dixie Highway,<br />
+            North Miami Beach, FL 33160
+          </p>
+        </div>
 
-      <div className="contact-card">
-        <p><strong>{t("Dr. Lorna R. Shuford")}</strong></p>
-        <p>📞 <a href="tel:17864008765">786-400-8765</a></p>
-        <p>📧 <a href="mailto:Funding4us@gmail.com">Funding4us@gmail.com</a></p>
-        <p>🏢 7900 NW 27th Ave. Ste. A04A – Miami, FL 33147</p>
-
-        <div className="contact-links">
-          <a
-            className="btn gofundme"
-            href="https://www.gofundme.com/f/yje5m-join-panamerican-dojo-kai-dream-travel-to-japan"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            GoFundMe
-          </a>
-          <a
-            className="btn instagram"
-            href="https://instagram.com"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Instagram
-          </a>
-          <a
-            className="btn facebook"
-            href="https://facebook.com"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Facebook
-          </a>
+        <div className="map-container">
+          <iframe
+            title="dojo-location"
+            width="100%"
+            height="250"
+            style={{ border: 0, borderRadius: "8px" }}
+            loading="lazy"
+            allowFullScreen
+            src="https://www.google.com/maps?q=17122+W+Dixie+Highway,+North+Miami+Beach,+FL+33160&output=embed"
+          ></iframe>
         </div>
       </div>
     </section>
