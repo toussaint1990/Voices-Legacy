@@ -5,22 +5,29 @@ export default function Gallery() {
   const [images, setImages] = useState<string[]>([]);
   const [openIndex, setOpenIndex] = useState<number | null>(null);
 
-  // Auto-import all images from /public/gallery
+  // Auto-load every image from /public/gallery
   useEffect(() => {
-    // @ts-ignore
-    const imported = import.meta.glob("/public/gallery/*.{jpg,jpeg,png,webp}", { eager: true });
-    const paths = Object.keys(imported).map((path) => path.replace("/public", ""));
-    setImages(paths);
+    const load = async () => {
+      const imported = import.meta.glob("/public/gallery/*.{jpg,jpeg,png,JPG,JPEG,PNG,webp,WEBP}", {
+        eager: true,
+      });
+      // Vite returns absolute /public/... paths locally — remove /public for prod
+      const paths = Object.keys(imported).map((p) => p.replace("/public", ""));
+      // Optional: sort by name for stable order
+      paths.sort((a, b) => a.localeCompare(b));
+      setImages(paths);
+    };
+    load();
   }, []);
 
-  // Lightbox controls
+  // Close on ESC / navigate with arrows
   useEffect(() => {
     if (openIndex === null) return;
     const onKey = (e: KeyboardEvent) => {
       if (e.key === "Escape") setOpenIndex(null);
-      if (e.key === "ArrowRight") setOpenIndex((i) => (i === null ? null : (i + 1) % images.length));
+      if (e.key === "ArrowRight") setOpenIndex((i) => (i === null ? 0 : (i + 1) % images.length));
       if (e.key === "ArrowLeft")
-        setOpenIndex((i) => (i === null ? null : (i - 1 + images.length) % images.length));
+        setOpenIndex((i) => (i === null ? 0 : (i - 1 + images.length) % images.length));
     };
     window.addEventListener("keydown", onKey);
     return () => window.removeEventListener("keydown", onKey);
@@ -31,57 +38,22 @@ export default function Gallery() {
       <h2>Gallery</h2>
 
       <div className="gallery-grid">
-        {images.map((src, index) => (
+        {images.map((src, i) => (
           <button
-            key={index}
+            key={src + i}
             className="gallery-item"
-            onClick={() => setOpenIndex(index)}
-            aria-label={`Open image ${index + 1}`}
+            onClick={() => setOpenIndex(i)}
+            aria-label={`Open image ${i + 1}`}
           >
-            <img src={src} alt={`Gallery ${index + 1}`} loading="lazy" />
+            {/* Square card via CSS ::before; image fills with object-fit: cover */}
+            <img src={src} alt={`Gallery ${i + 1}`} loading="lazy" />
           </button>
         ))}
       </div>
 
-      {/* Lightbox */}
       {openIndex !== null && (
-        <div className="lightbox" onClick={() => setOpenIndex(null)}>
-          <button
-            className="lb-close"
-            onClick={(e) => {
-              e.stopPropagation();
-              setOpenIndex(null);
-            }}
-          >
-            ✕
-          </button>
-
-          <button
-            className="lb-nav prev"
-            onClick={(e) => {
-              e.stopPropagation();
-              setOpenIndex((openIndex - 1 + images.length) % images.length);
-            }}
-          >
-            ‹
-          </button>
-
-          <img
-            className="lb-img"
-            src={images[openIndex]}
-            alt={`Gallery enlarged ${openIndex + 1}`}
-            onClick={(e) => e.stopPropagation()}
-          />
-
-          <button
-            className="lb-nav next"
-            onClick={(e) => {
-              e.stopPropagation();
-              setOpenIndex((openIndex + 1) % images.length);
-            }}
-          >
-            ›
-          </button>
+        <div className="lightbox" onClick={() => setOpenIndex(null)} role="dialog" aria-modal="true">
+          <img src={images[openIndex]} alt="Enlarged view" />
         </div>
       )}
     </section>
