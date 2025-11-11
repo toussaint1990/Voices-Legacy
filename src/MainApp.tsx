@@ -10,55 +10,45 @@ export default function MainApp() {
   return (
     <>
       <NavBar />
-      <section
-        id="hero"
-        style={{
-          backgroundImage: "url('/hero.jpg')",
-          backgroundSize: "cover",
-          backgroundPosition: "center",
-          backgroundRepeat: "no-repeat",
-          minHeight: "100vh",
-          display: "flex",
-          alignItems: "center",
-          justifyContent: "center",
-          color: "white",
-        }}
-      >
-        <section
-          style={{
-            color: "white",
-            textAlign: "center",
-            marginTop: "20px",
-          }}
-        >
-          <div className="social-buttons">
-            <a
-              className="btn gofundme"
-              href="https://www.gofundme.com/"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              GoFundMe
-            </a>
-            <a
-              className="btn instagram"
-              href="https://instagram.com/"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Instagram
-            </a>
-            <a
-              className="btn facebook"
-              href="https://facebook.com/"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Facebook
-            </a>
-          </div>
-        </section>
-      </section>
+    <section id="hero" className="hero">
+  <img
+    src="/hero2025-new.jpg"
+    alt="Voices of Legacy — Cultural Exchange"
+    style={{
+      width: "100%",
+      height: "auto",
+      objectFit: "contain",
+      display: "block",
+    }}
+  />
+
+  <div className="hero-buttons" style={{ textAlign: "center", marginTop: "-60px" }}>
+    <a
+      className="btn gofundme"
+      href="https://www.gofundme.com/"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      GoFundMe
+    </a>
+    <a
+      className="btn instagram"
+      href="https://instagram.com/"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      Instagram
+    </a>
+    <a
+      className="btn facebook"
+      href="https://facebook.com/"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      Facebook
+    </a>
+  </div>
+</section>
 
       {/* Content */}
       <About />
