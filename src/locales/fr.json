@@ -1,18 +1,28 @@
 {
-  "nav": { "about": "À propos", "gallery": "Galerie", "contact": "Contact" },
-
+  "nav": {
+    "brand": "Voices of Legacy",
+    "about": "À propos",
+    "gallery": "Galerie",
+    "contact": "Contact"
+  },
   "about": {
     "title": "À propos",
     "letter": {
       "greeting": "Madame, Monsieur,",
-      "p1": "Je m’appelle <strong>Luis Aníbal García</strong>, Fondateur et Directeur Technique de Panamerican Dojo Kai USA et Venezuela. J’ai obtenu ma première ceinture noire auprès de la United States Karate Association en 1979 et je détiens le grade de 7e Dan depuis 2009. Je me suis formé auprès du maître japonais Kasuhiko Morita et je maintiens un lien permanent avec le Japan Karatedo Dojokai, notre siège au Japon.",
-      "p2": "Nos dojos ont toujours été des lieux de famille, d’humanité et de discipline, promouvant de fortes valeurs et enseignant le karate-do traditionnel comme méthode d’autodéfense sans inciter à la violence, dans l’humilité et à l’écart des tendances commerciales.",
-      "p3": "Nous sommes honorés d’annoncer que, pour la première fois, des dojos des États-Unis et du Venezuela ont été officiellement invités à participer au <strong>51ᵉ Championnat All-Japan Karate-do Dojokai</strong>, qui se tiendra le <strong>3 novembre 2025</strong> à Tachikawa, Tokyo. Cette occasion unique offre un échange culturel, une compétition internationale et un développement personnel pour nos athlètes.",
+      "p1": "Je m'appelle Luis Anibal García, Fondateur et Directeur technique de Panamerican Dojo Kai USA et Venezuela.",
+      "p2": "Nos dojos ont toujours été des lieux où priment la famille, l’humanité et la discipline, promouvant de fortes valeurs et enseignant le karaté-do traditionnel comme méthode d’autodéfense sans inciter à la violence, dans l’humilité et à l’écart des tendances commerciales.",
+      "p3": "Nous sommes honorés d’annoncer que, pour la première fois, des dojos des États-Unis et du Venezuela ont été officiellement invités à participer au 51ᵉ Championnat All-Japan Karate-do Dojokai, qui se tiendra le 3 novembre 2025 à Tachikawa, Tokyo. Cette occasion unique offre un échange culturel, une compétition internationale et un développement personnel pour nos athlètes.",
       "p4": "Comme pour de nombreux événements internationaux, les coûts — voyage, hébergement, frais de compétition, repas et entraînement — sont importants et doivent être couverts par les familles et la communauté du dojo.",
-      "p5": "Nous vous invitons respectueusement à envisager de sponsoriser notre délégation. Tout soutien sera reçu avec gratitude. Votre parrainage permettra à notre jeunesse de représenter les États-Unis et le Venezuela sur la scène mondiale, tout en mettant en valeur votre engagement envers la jeunesse, l’échange culturel et le bien-être par le sport. Toute contribution, quel qu’en soit le montant, fera une réelle différence pour nos athlètes.",
+      "p5": "Nous vous invitons respectueusement à envisager de parrainer notre délégation. Tout soutien sera reçu avec gratitude. Votre parrainage permettra à notre jeunesse de représenter les États-Unis et le Venezuela sur la scène mondiale, tout en mettant en valeur votre engagement envers la jeunesse, l’échange culturel et le bien-être par le sport. Toute contribution, quel qu’en soit le montant, fera une réelle différence pour nos athlètes.",
       "closingTitle": "Avec toute notre reconnaissance,",
-      "name": "Luis Aníbal García",
+      "name": "Luis Anibal García",
       "title": "Directeur Technique – Panamerican Dojo Kai USA"
     }
+  },
+  "gallery": {
+    "title": "Galerie"
+  },
+  "contact": {
+    "title": "Contact"
   }
 }
