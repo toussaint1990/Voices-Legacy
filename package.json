@@ -5,11 +5,7 @@
   "type": "module",
   "engines": { "node": "20.x" },
 
-  "scripts": {
-    "dev": "vite",
-    "build": "tsc -b && vite build",
-    "preview": "vite preview"
-  },
+  "scripts":{"dev":"vite","typecheck":"tsc --noEmit -p tsconfig.json","build":"tsc --noEmit -p tsconfig.json && vite build","preview":"vite preview"},
 
   "dependencies": {
     "i18next": "^23.14.0",
@@ -38,3 +34,4 @@
     }
   }
 }
+
